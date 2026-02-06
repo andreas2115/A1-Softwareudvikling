@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIKUCanteen", "DIKUCanteen.csproj", "{194C140E-80BC-DF9A-957E-33CE40A981BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{194C140E-80BC-DF9A-957E-33CE40A981BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194C140E-80BC-DF9A-957E-33CE40A981BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194C140E-80BC-DF9A-957E-33CE40A981BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194C140E-80BC-DF9A-957E-33CE40A981BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CF0907A-509C-4405-B463-CFB9E76A3352}
+	EndGlobalSection
+EndGlobal
