@@ -1,27 +1,25 @@
-using NUnit.Framework;
-using DIKUCanteen;
-using System; 
-
 namespace DIKUCanteenTests;
+using System;
+using DIKUCanteen;
+using NUnit.Framework;
 
-public class Tests
-{
+public class Tests {
     [SetUp]
-    public void Setup(){
+    public void Setup() {
     }
 
     [TestCase(3, 2)]
     [TestCase(10, 10)]
     [TestCase(2, 5)]
-    public void TestCanTakeCup(int cups, int students){
+    public void TestCanTakeCup(int cups, int students) {
         // create canteen object
         Canteen canteen = new Canteen("kantinen", cups);
-         
+
 
         // loop
-        for (int i = 0; i < students; i++){
+        for (int i = 0; i < students; i++) {
             // create student object
-            Student student = new Student("Ignacio Fernandiz", "Historian", 68) ;
+            Student student = new Student("Ignacio Fernandiz", "Historian", 68);
             // take a cup from the canteen
             student.TakeCup(canteen);
             // return a cup to the canteen
@@ -33,7 +31,7 @@ public class Tests
 
     // test CanteenBoardMember can take cup
     [Test]
-    public void TestCanteenBoardMemberCanTakeAndReturnCup(){
+    public void TestCanteenBoardMemberCanTakeAndReturnCup() {
         // create canteen object
         Canteen canteen = new Canteen("Kantinen", 3);
         // create canteen board member object
@@ -50,13 +48,13 @@ public class Tests
 
     // test cannot take cup, when there are zero cups in the canteen
     [Test]
-    public void TestCannotTakeCup(){
+    public void TestCannotTakeCup() {
         // create canteen object
         Canteen canteen = new Canteen("Kantinen", 0);
-         
+
 
         // create student object
-        Student student = new Student("Ignacio Fernandiz", "Historian", 68) ;
+        Student student = new Student("Ignacio Fernandiz", "Historian", 68);
         // take a cup from the canteen
         student.TakeCup(canteen);
 
@@ -65,16 +63,16 @@ public class Tests
 
     // test can return cup
     [Test]
-    public void TestCanReturnCup(){
+    public void TestCanReturnCup() {
         // create canteen object
         Canteen canteen = new Canteen("Kantinen", 3);
-         
+
 
         // create student object
-        Student student = new Student("Ignacio Fernandiz", "Historian", 68) ;
+        Student student = new Student("Ignacio Fernandiz", "Historian", 68);
         // take a cup from the canteen
         student.TakeCup(canteen);
-        
+
         Assert.AreEqual(canteen.Cups, 2);
         // return a cup to the canteen
         student.ReturnCup(canteen);
@@ -84,13 +82,13 @@ public class Tests
 
     // test can not take cup, if student already has a cup
     [Test]
-    public void TestCannotTakeCupIfStudentHasCup(){
+    public void TestCannotTakeCupIfStudentHasCup() {
         // create canteen object
         Canteen canteen = new Canteen("Kantinen", 3);
-         
+
 
         // create student object
-        Student student = new Student("Ignacio Fernandiz", "Historian", 68) ;
+        Student student = new Student("Ignacio Fernandiz", "Historian", 68);
         // take a cup from the canteen
         student.TakeCup(canteen);
 
@@ -103,13 +101,13 @@ public class Tests
 
     // test can not return cup, if student does not have a cup
     [Test]
-    public void TestCannotReturnCupIfStudentDoesNotHaveCup(){
+    public void TestCannotReturnCupIfStudentDoesNotHaveCup() {
         // create canteen object
         Canteen canteen = new Canteen("Kantinen", 3);
-         
+
 
         // create student object
-        Student student = new Student("Ignacio Fernandiz", "Historian", 68) ;
+        Student student = new Student("Ignacio Fernandiz", "Historian", 68);
         // return a cup to the canteen
         student.ReturnCup(canteen);
 
@@ -118,7 +116,7 @@ public class Tests
 
     // test student is a person
     [Test]
-    public void TestStudentIsPerson(){
+    public void TestStudentIsPerson() {
         // create student object
         Student student = new Student("Ignacio Fernandiz", "Historian", 68);
         Assert.IsTrue(student is Person);
@@ -126,7 +124,7 @@ public class Tests
 
     // test CanteenBoardMember is a person
     [Test]
-    public void TestCanteenBoardMemberIsPerson(){
+    public void TestCanteenBoardMemberIsPerson() {
         // create canteen board member object
         CanteenBoardMember canteenBoardMember = new CanteenBoardMember("Ignacio Fernandiz", "Historian", 68);
         Assert.IsTrue(canteenBoardMember is Person);
@@ -134,7 +132,7 @@ public class Tests
 
     // test canteen is a room
     [Test]
-    public void TestCanteenIsRoom(){
+    public void TestCanteenIsRoom() {
         // create canteen object
         Canteen canteen = new Canteen("Kantinen", 123);
         Assert.IsTrue(canteen is Room);
@@ -142,7 +140,7 @@ public class Tests
 
     //CanteenBoardMember can buy cup if CanteenBoardMember.CupBudget is large enough
     [Test]
-    public void TestCanteenBoardMemberCanBuyCup(){
+    public void TestCanteenBoardMemberCanBuyCup() {
         // create canteen object
         Canteen canteen = new Canteen("Kantinen", 3);
         // create canteen board member object
@@ -158,7 +156,7 @@ public class Tests
 
     //CanteenBoardMember cannot buy cup if CanteenBoardMember.CupBudget is not large enough
     [Test]
-    public void TestCanteenBoardMemberCannotBuyCup(){
+    public void TestCanteenBoardMemberCannotBuyCup() {
         // create canteen object
         Canteen canteen = new Canteen("Kantinen", 3);
         // create canteen board member object
